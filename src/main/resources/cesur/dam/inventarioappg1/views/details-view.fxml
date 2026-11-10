@@ -2,13 +2,9 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
-<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -18,7 +14,7 @@
 
 <BorderPane xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cesur.dam.inventarioappg1.controllers.DetailsController">
    <center>
-      <VBox alignment="CENTER" maxWidth="445.0" prefHeight="619.0" prefWidth="445.0" spacing="20.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" maxWidth="445.0" prefHeight="487.0" prefWidth="445.0" spacing="20.0" BorderPane.alignment="CENTER">
           <padding>
               <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
           </padding>
@@ -28,34 +24,11 @@
             </image>
          </ImageView>
       
-          <Label fx:id="welcomeText" text="Ficha de equipo">
+                <Label fx:id="welcomeText" text="Ficha de equipo">
             <font>
                <Font name="System Bold" size="24.0" />
             </font>
          </Label>
-         <FlowPane alignment="CENTER">
-            <children>
-               <Label prefWidth="66.0" text="Id" />
-               <Spinner fx:id="spinnerId" editable="true" />
-            </children>
-         </FlowPane>
-         <FlowPane alignment="CENTER">
-            <children>
-               <Label prefWidth="66.0" text="Nombre" />
-               <TextField fx:id="txtName" />
-            </children>
-         </FlowPane>
-         <FlowPane alignment="CENTER">
-            <children>
-               <Label prefWidth="66.0" text="Categoria" />
-               <ChoiceBox fx:id="choiceCategory" prefWidth="150.0" />
-            </children>
-         </FlowPane>
-         <FlowPane alignment="CENTER" layoutX="30.0" layoutY="142.0">
-            <children>
-               <CheckBox fx:id="chkAvailable" alignment="CENTER" mnemonicParsing="false" text="Disponible" />
-            </children>
-         </FlowPane>
          <TableView fx:id="table" prefHeight="200.0" prefWidth="200.0">
            <columns>
              <TableColumn fx:id="cId" prefWidth="75.0" text="Id" />
@@ -69,15 +42,7 @@
          </TableView>
          <FlowPane alignment="CENTER" hgap="20.0">
             <children>
-                <Button contentDisplay="TOP" graphicTextGap="0.0" onAction="#save" text="Guardar">
-                  <graphic>
-                     <ImageView fitHeight="150.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
-                        <image>
-                           <Image url="@../disk.png" />
-                        </image>
-                     </ImageView>
-                  </graphic>
-               </Button>
+               <Button fx:id="btnCrear" mnemonicParsing="false" onAction="#crear" text="Crear" />
                <Button mnemonicParsing="false" onAction="#goBack" text="Volver" />
             </children>
          </FlowPane>
