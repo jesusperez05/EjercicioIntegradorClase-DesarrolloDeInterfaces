@@ -30,15 +30,8 @@ public class CreateController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
         dao = new EquipoJdbcDAO(DataSourceFactory.getDataSource());
-
-        spinnerId.setValueFactory(
-                new SpinnerValueFactory.IntegerSpinnerValueFactory(
-                        0, 1000, 0, 1
-                )
-        );
-
+        spinnerId.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 1000, 0, 1));
         choiceCategory.getItems().addAll(
                 "Keyboard",
                 "Laptop",
@@ -47,13 +40,11 @@ public class CreateController implements Initializable {
                 "Computer",
                 "Printer"
         );
-
         choiceCategory.getSelectionModel().selectFirst();
     }
 
     @FXML
     public void guardar(ActionEvent actionEvent) {
-
         if (txtName.getText().isBlank()) {
             return;
         }
@@ -72,7 +63,6 @@ public class CreateController implements Initializable {
 
     @FXML
     public void cancelar(ActionEvent actionEvent) {
-
         Stage stage = (Stage) txtName.getScene().getWindow();
         stage.close();
     }
